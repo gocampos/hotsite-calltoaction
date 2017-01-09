@@ -28,12 +28,13 @@ html,
 body {
   height: 100%;
   background-color: #1295b9;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
 }
 body {
   color: #000;
   text-align: center;
-  text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
+  /* text-shadow: 0 .05rem .1rem rgba(0,0,0,.5); */
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -54,9 +55,27 @@ body {
   margin-left: auto;
 }
 
+.cover-heading {
+  font-weight:900;
+  text-align: left;
+}
+
 /* Padding for spacing */
 .inner {
   padding: 2rem;
+}
+
+.lead {
+  text-align: left;
+}
+
+.center {
+  text-align: center !important;
+}
+
+.image-iphone {
+  background:url('../images/iphone.png') center; 
+  height:600px;
 }
 
 
@@ -134,12 +153,30 @@ body {
 }
 
 
+.site-wrapper-inner {
+    vertical-align: middle;
+    background-image:url('../images/bg.jpg');
+    background-size:     cover;                     
+    background-repeat:   no-repeat;
+    background-position: center center;              
+}
+
+/*
+* Modal
+*/ 
+
+.bd-example-modal {background-color:#fafafa}
+.bd-example-modal .modal{position:relative;top:auto;right:auto;bottom:auto;left:auto;z-index:1;display:block}
+.bd-example-modal .modal-dialog{left:auto;margin-right:auto;margin-left:auto}
+
+
 /*
  * Affix and center
  */
 
+
+
 @media (min-width: 40em) {
-  /* Pull out the header and footer */
   .masthead {
     position: fixed;
     top: 0;
@@ -147,10 +184,6 @@ body {
   .mastfoot {
     position: fixed;
     bottom: 0;
-  }
-  /* Start the vertical centering */
-  .site-wrapper-inner {
-    vertical-align: middle;
   }
   /* Handle the widths */
   .masthead,
@@ -168,9 +201,14 @@ body {
   }
 }
 
-@media (max-width: 48em) {
-.image-iphone {
+@media only screen and (max-device-width: 480px) {
+  .image-iphone {
     display:none;
+  }
+
+  .lead,
+  .cover-heading {
+    text-align: center;
   }
 
   .footer {

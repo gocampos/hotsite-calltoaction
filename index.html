@@ -7,7 +7,6 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="https://v4-alpha.getbootstrap.com/favicon.ico">
 
     <title>Birdymee App</title>
 
@@ -15,11 +14,10 @@
     <link href="./css/bootstrap.min.css" rel="stylesheet">
 
     <!-- font -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="./css/cover.css" rel="stylesheet">
-
 
     <link rel="stylesheet" type="text/css" href="chrome-extension://neomigpibafpboiknmijddgnncengfnm/css/divpop.css"></head>
 
@@ -44,9 +42,7 @@
           </div>
         -->
 
-          <div class="col-sm-6 mb-3 image-iphone">
-            <img src="./images/iphone.png">
-          </div>
+          <div class="col-sm-6 mb-3 image-iphone"></div>
           <div class="cover inner col-sm-6 mb-3">
             <h1 class="cover-heading">ESTAMOS CHEGANDO</h1>
             <p class="lead"><strong>Birdy App</strong>, o seu melhor companheiro de viagem. Crie suas <strong>rotas</strong> e <strong>compartilhe</strong> suas melhores experiências!</p>
@@ -54,13 +50,34 @@
               Cadastre o seu e-mail e seja o primeiro a baixar!
               <input type="email" id="inputEmail" class="form-control" placeholder="E-mail" required="" autofocus="">
             </p>
-            <p class="lead">
-              <a href="#" class="btn btn-lg btn-secondary">Me avise</a>
+            <p class="lead center">
+              <button type="button" class="btn btn-lg btn-secondary" data-toggle="modal" onClick="meAvise();">Me avise</button>
+              <!-- <a href="#" class="btn btn-lg btn-secondary">Me avise</a> -->
             </p>
           </div>
         </div>
 
       </div>
+
+<div class="modal fade bd-example-modal-sm" id="modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Obrigado!</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Seu e-mail foi registrado com sucesso. <br /<br />Em breve você será comunicado a respeito do lançamento do <br /><strong>App Birdymee</strong></p>
+      </div>
+      <div class="modal-footer">      
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
     </div>
 
@@ -68,7 +85,7 @@
       <div class="container">
         <div class="col-sm-9">
         <span>
-              Birdymee @ 2016 - TODOS OS DIREITOS RESERVADOS - DESENVOLVIDO POR <strong>MANGO TREE</strong>
+              Birdymee @ 2017 - TODOS OS DIREITOS RESERVADOS - DESENVOLVIDO POR <strong>MANGO TREE</strong>
         </span>
         </div>
         <div class="col-sm-3">
@@ -80,12 +97,12 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="./js/jquery.min.js" integrity="sha384-THPy051/pYDQGanwU6poAc/hOdQxjnOEXzbT+OuUAFqNqFjL+4IGLBgCJC3ZOShY" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="./js/jquery-3.1.1.slim.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../js/jquery.min.js"><\/script>')</script>
     <script src="./js/tether.min.js" integrity="sha384-Plbmg8JY28KFelvJVai01l8WyZzrYWG825m+cZ0eDDS1f7d/js6ikvy1+X+guPIB" crossorigin="anonymous"></script>
     <script src="./js/bootstrap.min.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="./js/ie10-viewport-bug-workaround.js"></script>
+    <script src="./js/birdymee.js"></script>
   
-
 </body></html>
