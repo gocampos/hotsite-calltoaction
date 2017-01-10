@@ -58,6 +58,7 @@ body {
 .cover-heading {
   font-weight:900;
   text-align: left;
+  font-family: 'Raleway', sans-serif;
 }
 
 /* Padding for spacing */
@@ -74,8 +75,13 @@ body {
 }
 
 .image-iphone {
-  background:url('../images/iphone.png') center; 
+  background:url('../images/iphone_medium.png') center; 
   height:600px;
+}
+
+.space {
+  display:block;
+  padding:5px 0 10px 0;
 }
 
 
@@ -132,7 +138,7 @@ body {
 }
 .cover .btn-lg {
   padding: .75rem 1.25rem;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 
@@ -147,7 +153,7 @@ body {
     min-height: 70px;
     line-height: 60px;
     color:#FFF;
-    font-size:10pt;
+    font-size:8pt;
     background-color: #000;
     padding-top:5px;
 }
