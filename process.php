@@ -7,20 +7,36 @@ function mailchimp_cadastro($email) {
   $command = <<<COMMAND
 curl --user apikey:$api_key \
      -H "Content-Type: application/json" \
-     --request POST "https://us11.api.mailchimp.com/3.0/lists/$list_id/members/" \
+     --request POST "https://us14.api.mailchimp.com/3.0/lists/$list_id/members/" \
      -d '{"email_address": "$email", "status": "subscribed", "merge_fields": {"SOURCE": "Me avise"}}'
 COMMAND;
 
-  $ok = shell_exec($command);
+  $result = shell_exec($command);
 
-  return $ok;
-  // echo $command; exit;
+  $json_result = json_decode($result);
+
+  // ja existe
+  if($json_result->status == 400) {
+     return 'exists';
+  }
+
+  return !empty($json_result->id) ? 'registered' : 'error';
 }
 
-$mail = escapeshellarg($_POST['email']);
+function arquivo_registrar_email($email) {
+  $dir = dirname(__FILE__) . '/list';
+  $filepath = $dir . '/list.txt';
 
-if($ok = mailchimp_cadastro($mail)) {
-	die(json_encode(1));
-}
+  $fp = fopen($filepath, 'a+');
+  fwrite($fp, date('Y-m-d H:i:s') . ';'. $email . PHP_EOL);
+  fclose($fp);
+} 
 
-die(json_encode(0));
+
+$mail = trim(escapeshellarg($_POST['email']), "'");
+
+$result = mailchimp_cadastro($mail);
+
+arquivo_registrar_email($mail);
+
+die(json_encode($result));
